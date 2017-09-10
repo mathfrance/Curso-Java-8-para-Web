@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [CursosDisc2Uni1]">
+  <test name="unidade3.persistencia.GenericDAOTest(failed)" junit="true">
+    <classes>
+      <class name="unidade3.persistencia.GenericDAOTest">
+        <methods>
+          <include name="testSomeMethod"/>
+        </methods>
+      </class> <!-- unidade3.persistencia.GenericDAOTest -->
+    </classes>
+  </test> <!-- unidade3.persistencia.GenericDAOTest(failed) -->
+</suite> <!-- Failed suite [CursosDisc2Uni1] -->
