@@ -5,6 +5,7 @@
  */
 package com.abctreinamentos;
 
+import java.util.List;
 import java.util.Scanner;
 
 /**
@@ -34,7 +35,8 @@ public class PagamentoApp {
             switch (opcao){
                 case 1:{ //Consultar todos
                     System.out.println("[1] Consultar todos:");
-                    //consultarTodos();
+                   List<Pagamento> pagamentos = dao.findAll();
+                    pagamentos.forEach(System.out::println);
                     break;
                 }
                 case 2:{ //Consultar Especifico

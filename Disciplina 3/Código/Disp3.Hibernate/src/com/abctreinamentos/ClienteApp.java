@@ -5,6 +5,7 @@
  */
 package com.abctreinamentos;
 
+import java.util.List;
 import java.util.Scanner;
 
 /**
@@ -19,6 +20,7 @@ public class ClienteApp {
         long cpf;
         String nome, email;
         ClienteDAO dao = new ClienteDAO();
+        
         while(opcao != 6){
             System.out.println("");
             System.out.println("Sistema Gerenciamento de Clientes");
@@ -34,7 +36,8 @@ public class ClienteApp {
             switch (opcao){
                 case 1:{ //Consultar todos
                     System.out.println("[1] Consultar todos:");
-                    //consultarTodos();
+                    List<Cliente> clientes = dao.findAll();
+                    clientes.forEach(System.out::println); 
                     break;
                 }
                 case 2:{ //Consultar Especifico

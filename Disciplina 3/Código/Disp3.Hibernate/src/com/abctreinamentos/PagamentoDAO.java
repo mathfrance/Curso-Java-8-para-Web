@@ -5,6 +5,7 @@ import java.io.File;
 import java.util.List;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
@@ -94,13 +95,15 @@ public class PagamentoDAO {
 		try {
 			Session session = sessionFactory.getCurrentSession();
                         session.beginTransaction();
-                        //HQL
-                        session.getTransaction().commit();
+                       String hql = "from Pagamento";
+                        Query query = session.createQuery(hql);
+                        List<Pagamento> pagamentos = query.list();
+                        session.getTransaction().commit();                        
 			log.debug("persist successful");
+                        return pagamentos;
 		} catch (RuntimeException re) {
 			log.error("persist failed", re);
 			throw re;
 		}
-            return null;
 	}
 }
